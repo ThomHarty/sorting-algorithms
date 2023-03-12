@@ -8,11 +8,15 @@ describe("TsAlgo Class", () => {
 
   beforeEach(() => (arr = [1, 25, 27, 85, 43, 55, 12, 6, 4, 44, 97, 1]));
 
-  it("insertion sort: returns the correct result", () => {
-    expect(sort.insertion(arr)).toEqual(expected);
-  });
-
   it("bubble sort: returns the correct result", () => {
     expect(sort.bubble(arr)).toEqual(expected);
+  });
+
+  it("selection sort: returns the correct result", () => {
+    expect(sort.selection(arr)).toEqual(expected);
+  });
+
+  it("insertion sort: returns the correct result", () => {
+    expect(sort.insertion(arr)).toEqual(expected);
   });
 });
