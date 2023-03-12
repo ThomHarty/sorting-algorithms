@@ -11,4 +11,8 @@ describe("TsAlgo Class", () => {
   it("insertion sort: returns the correct result", () => {
     expect(sort.insertion(arr)).toEqual(expected);
   });
+
+  it("bubble sort: returns the correct result", () => {
+    expect(sort.bubble(arr)).toEqual(expected);
+  });
 });
