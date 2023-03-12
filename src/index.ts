@@ -1,5 +1,5 @@
 export class TsAlgo {
-  public insertion(arr: Array<number>) {
+  insertion(arr: Array<number>) {
     for (let i = 1; i < arr.length; i++) {
       let current = arr[i];
 
