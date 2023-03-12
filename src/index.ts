@@ -25,8 +25,29 @@ export class TsAlgo {
 
     return arr;
   }
+
+  bubble(arr: Array<number>) {
+    let len = arr.length;
+
+    for (let i = 0; i < arr.length; i++) {
+      for (let j = 0; j < len; j++) {
+        if (arr[j] > arr[j + 1]) {
+          const temp = arr[j];
+          arr[j] = arr[j + 1];
+          arr[j + 1] = temp;
+        }
+      }
+      len--;
+    }
+
+    return arr;
+  }
 }
 
 const sort = new TsAlgo();
-const insertion = sort.insertion([1, 25, 27, 85, 43, 55, 12, 6, 4, 44, 97, 1]);
-console.log(insertion);
+const original = [1, 25, 27, 85, 43, 55, 12, 6, 4, 44, 97, 1];
+console.log("original: ", original);
+const insertion = sort.insertion(original);
+console.log("insertion: ", insertion);
+const bubble = sort.bubble(original);
+console.log("bubble: ", bubble);
