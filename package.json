@@ -1,5 +1,5 @@
 {
-  "name": "ts-npm-starter-john-doe",
+  "name": "tsalgo",
   "version": "1.0.0",
   "description": "A nice greeter",
   "main": "lib/index.js",
@@ -9,13 +9,16 @@
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.json",
-    "prepare" : "yarn build",
-    "prepublishOnly" : "yarn test && yarn lint",
-    "preversion" : "yarn lint",
-    "version" : "yarn format && git add -A src",
-    "postversion" : "git push && git push --tags"
+    "prepare": "yarn build",
+    "prepublishOnly": "yarn test && yarn lint",
+    "preversion": "yarn lint",
+    "version": "yarn format && git add -A src",
+    "postversion": "git push && git push --tags"
   },
-  "keywords": ["Hello", "Greeter"],
+  "keywords": [
+    "Hello",
+    "Greeter"
+  ],
   "author": "John Doe",
   "license": "ISC",
   "devDependencies": {
