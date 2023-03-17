@@ -107,7 +107,7 @@ export class TsAlgo {
 }
 
 const sort = new TsAlgo();
-const original = [1, 25, 27, 85, 43, 55, 12, 6, 4, 44, 97, 1];
+const original = [7, 3, 6, 8, 9, 4, 1, 2, 5];
 console.log("original: ", original);
 const bubble = sort.bubble(original);
 console.log("bubble: ", bubble);

@@ -4,9 +4,9 @@ describe("TsAlgo Class", () => {
   const sort = new TsAlgo();
 
   let arr: Array<number>;
-  const expected = [1, 1, 4, 6, 12, 25, 27, 43, 44, 55, 85, 97];
+  const expected = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-  beforeEach(() => (arr = [1, 25, 27, 85, 43, 55, 12, 6, 4, 44, 97, 1]));
+  beforeEach(() => (arr = [7, 3, 6, 8, 9, 4, 1, 2, 5]));
 
   it("bubble sort: returns the correct result", () => {
     expect(sort.bubble(arr)).toEqual(expected);
