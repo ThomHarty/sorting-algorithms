@@ -19,4 +19,8 @@ describe("TsAlgo Class", () => {
   it("insertion sort: returns the correct result", () => {
     expect(sort.insertion(arr)).toEqual(expected);
   });
+
+  it("merge sort: returns the correct result", () => {
+    expect(sort.merge(arr)).toEqual(expected);
+  });
 });
