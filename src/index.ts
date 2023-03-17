@@ -1,5 +1,7 @@
+type SortArray = Array<number>;
+
 export class TsAlgo {
-  bubble(arr: Array<number>) {
+  bubble(arr: SortArray): SortArray {
     let len = arr.length;
 
     for (let i = 0; i < arr.length; i++) {
@@ -16,7 +18,7 @@ export class TsAlgo {
     return arr;
   }
 
-  selection(arr: Array<number>) {
+  selection(arr: SortArray): SortArray {
     const len = arr.length;
 
     for (let i = 0; i < len; i++) {
@@ -38,7 +40,7 @@ export class TsAlgo {
     return arr;
   }
 
-  insertion(arr: Array<number>) {
+  insertion(arr: SortArray): SortArray {
     for (let i = 1; i < arr.length; i++) {
       let current = arr[i];
 
@@ -64,6 +66,44 @@ export class TsAlgo {
 
     return arr;
   }
+
+  merge(arr: SortArray): SortArray {
+    const sort = (leftArr: SortArray, rightArr: SortArray) => {
+      const output: SortArray = [];
+      let leftIndex = 0;
+      let rightIndex = 0;
+
+      while (leftIndex < leftArr.length && rightIndex < rightArr.length) {
+        const leftEl = leftArr[leftIndex];
+        const rightEl = rightArr[rightIndex];
+
+        // console.log(`compare = left: ${leftEl}, right: ${rightEl}`);
+
+        if (leftEl < rightEl) {
+          output.push(leftEl);
+          leftIndex++;
+        } else {
+          output.push(rightEl);
+          rightIndex++;
+        }
+
+        // console.log(`out: ${output}`);
+      }
+
+      return [...output, ...leftArr.slice(leftIndex), ...rightArr.slice(rightIndex)];
+    };
+
+    if (arr.length <= 1) return arr;
+
+    const middleIndex = Math.floor(arr.length / 2);
+    const leftArr = arr.slice(0, middleIndex);
+    const rightArr = arr.slice(middleIndex);
+
+    // console.log(`left array outside: ${leftArr}`);
+    // console.log(`right array outside: ${rightArr}`);
+
+    return sort(this.merge(leftArr), this.merge(rightArr));
+  }
 }
 
 const sort = new TsAlgo();
@@ -75,3 +115,5 @@ const selection = sort.selection(original);
 console.log("selection: ", selection);
 const insertion = sort.insertion(original);
 console.log("insertion: ", insertion);
+const merge = sort.merge(original);
+console.log("merge: ", merge);
