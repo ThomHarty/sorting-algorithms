@@ -1,6 +1,6 @@
 type SortArray = Array<number>;
 
-export class TsAlgo {
+export class SortingAlgorithms {
   bubble(arr: SortArray): SortArray {
     let len = arr.length;
 
@@ -77,7 +77,7 @@ export class TsAlgo {
         const leftEl = leftArr[leftIndex];
         const rightEl = rightArr[rightIndex];
 
-        // console.log(`compare = left: ${leftEl}, right: ${rightEl}`);
+        // console.log(`left array: ${leftArr}, right array: ${rightArr}`);
 
         if (leftEl < rightEl) {
           output.push(leftEl);
@@ -87,7 +87,7 @@ export class TsAlgo {
           rightIndex++;
         }
 
-        // console.log(`out: ${output}`);
+        // console.log(`output: ${output}`);
       }
 
       return [...output, ...leftArr.slice(leftIndex), ...rightArr.slice(rightIndex)];
@@ -99,21 +99,20 @@ export class TsAlgo {
     const leftArr = arr.slice(0, middleIndex);
     const rightArr = arr.slice(middleIndex);
 
-    // console.log(`left array outside: ${leftArr}`);
-    // console.log(`right array outside: ${rightArr}`);
+    const sorted = sort(this.merge(leftArr), this.merge(rightArr));
 
-    return sort(this.merge(leftArr), this.merge(rightArr));
+    // console.log(`sorted: `, sorted);
+
+    return sorted;
   }
 }
 
-const sort = new TsAlgo();
-const original = [7, 3, 6, 8, 9, 4, 1, 2, 5];
-console.log("original: ", original);
-const bubble = sort.bubble(original);
+const sort = new SortingAlgorithms();
+const bubble = sort.bubble([7, 3, 6, 8, 9, 4, 1, 2, 5]);
 console.log("bubble: ", bubble);
-const selection = sort.selection(original);
+const selection = sort.selection([7, 3, 6, 8, 9, 4, 1, 2, 5]);
 console.log("selection: ", selection);
-const insertion = sort.insertion(original);
+const insertion = sort.insertion([7, 3, 6, 8, 9, 4, 1, 2, 5]);
 console.log("insertion: ", insertion);
-const merge = sort.merge(original);
+const merge = sort.merge([7, 3, 6, 8, 9, 4, 1, 2, 5]);
 console.log("merge: ", merge);

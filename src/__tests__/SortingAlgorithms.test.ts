@@ -1,7 +1,7 @@
-import { TsAlgo } from "../index";
+import { SortingAlgorithms } from "../index";
 
-describe("TsAlgo Class", () => {
-  const sort = new TsAlgo();
+describe("SortingAlgorithms Class", () => {
+  const sort = new SortingAlgorithms();
 
   let arr: Array<number>;
   const expected = [1, 2, 3, 4, 5, 6, 7, 8, 9];
