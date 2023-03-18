@@ -117,13 +117,7 @@ export class SortingAlgorithms {
       el < pivot ? leftArr.push(el) : rightArr.push(el);
     }
 
-    if (leftArr.length > 0 && rightArr.length > 0) {
-      return [...this.quick(leftArr), pivot, ...this.quick(rightArr)];
-    } else if (leftArr.length > 0) {
-      return [...this.quick(leftArr), pivot];
-    } else {
-      return [pivot, ...this.quick(rightArr)];
-    }
+    return [...this.quick(leftArr), pivot, ...this.quick(rightArr)];
   }
 }
 
