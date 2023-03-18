@@ -23,4 +23,8 @@ describe("SortingAlgorithms Class", () => {
   it("merge sort: returns the correct result", () => {
     expect(sort.merge(arr)).toEqual(expected);
   });
+
+  it("quick sort: returns the correct result", () => {
+    expect(sort.quick(arr)).toEqual(expected);
+  });
 });
