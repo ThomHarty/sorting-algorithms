@@ -105,6 +105,20 @@ export class SortingAlgorithms {
 
     return sorted;
   }
+
+  quick(arr: SortArray): SortArray {
+    if (arr.length <= 1) return arr;
+
+    const pivot = arr[arr.length - 1];
+    const leftArr = [];
+    const rightArr = [];
+
+    for (const el of arr.slice(0, arr.length - 1)) {
+      el < pivot ? leftArr.push(el) : rightArr.push(el);
+    }
+
+    return [...this.quick(leftArr), pivot, ...this.quick(rightArr)];
+  }
 }
 
 const sort = new SortingAlgorithms();
@@ -116,3 +130,5 @@ const insertion = sort.insertion([7, 3, 6, 8, 9, 4, 1, 2, 5]);
 console.log("insertion: ", insertion);
 const merge = sort.merge([7, 3, 6, 8, 9, 4, 1, 2, 5]);
 console.log("merge: ", merge);
+const quick = sort.quick([7, 3, 6, 8, 9, 4, 1, 2, 5]);
+console.log("quick: ", quick);

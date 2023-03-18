@@ -1,3 +1,25 @@
+Sorting algorithms with tests
+
+### Install dependencies
+
 ```
-npm publish
+yarn
+```
+
+### Test
+
+```
+yarn test
+```
+
+### Build
+
+```
+yarn build
+```
+
+### Run
+
+```
+yarn run:node
 ```
